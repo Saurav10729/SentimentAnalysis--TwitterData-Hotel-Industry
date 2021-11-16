@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> Sentiment Analyzer</title>
+	<link rel="icon" href="{{url_for('static', filename='images/icontwitter.png')}}" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Saurav Adhikari" />
+
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css')}}	">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css')}}	">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}	">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css')}}	">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/searchbar.css')}}	">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}	">
+
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-5">
+
+						<div id="fh5co-logo"><a href="index.html"><img src="{{ url_for('static', filename='images/twitterimage.png')}}	" height="100" width="100"><a href="index.html"><b><span>Sentiment</span>-Analyzer</b></a></div>
+					</div>
+					<div class="col-xs-7 text-right menu-1">
+						<br>
+						<ul>
+							<li><a href="index.html">Search</a></li>
+							<li><a href="index.html #toolused">Tools used</a></li>
+							<li><a href="index.html #contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+
+	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t js-fullheight">
+						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+							<h1>Get Reviews of Hotels based on Twitter data in Real-Time</h1>
+							<br><h2> Enter the Hotel name here! </h2>
+							<form class="p-3" action="/results.html" method="POST">
+								<div>
+									<input name="hotels" id="search-bar"  type="text" required>
+									<button type="submit"  value="submit" class="fas fa-search btn" ld="search-btn"></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				
+				</div>
+				
+			</div>
+		</div>
+	</header>
+	<div id="fh5co-features">
+		<div class="container">
+			<div id="toolused">
+				<div class="services-padding">
+					<center><h3>Tools Used</h3><br></center>
+					<div class="row">
+						<div class="col-md-3 animate-box">
+							<div class="feature-left">
+								<div class="feature-copy">
+									<h3>Python</h3>
+									<p>Python is an interpreted, high-level and general-purpose programming language. Python's design ... </p>
+									<p><a target="_blank" href="https://www.python.org">Learn More <i class="icon-arrow-right22"></i></a></p>
+								</div>
+							</div>
+						</div>
+					
+						<div class="col-md-3 animate-box">
+							<div class="feature-left">
+								<div class="feature-copy">
+									<h3>HTML 5</h3>
+									<p>HTML5 is the latest and most enhanced version of HTML. Technically, HTML is not a programming language, <but class=""></but> </p>
+									<p><a target="_blank" href="https://www.tutorialspoint.com/html5/index.htm">Learn More <i class="icon-arrow-right22"></i></a></p>
+								</div>
+							</div>			
+						</div>
+					
+						<div class="col-md-3 animate-box">
+							<div class="feature-left">
+								<div class="feature-copy">
+									<h3>CSS</h3>
+									<p>Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to ...</p>
+									<p><a target="_blank" href="https://www.tutorialspoint.com/css/what_is_css.htm">Learn More <i class="icon-arrow-right22"></i></a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 animate-box">
+							<div class="feature-left">
+								<div class="feature-copy">
+									<h3>Machine Learning</h3>
+									<p>Machine learning is an application of artificial intelligence (AI) that provides systems ...</p>
+									<p><a target="_blank" href="https://www.expert.ai/blog/machine-learning-definition/#:~:text=Machine%20learning%20is%20an%20application,use%20it%20learn%20for%20themselves.">Learn More <i class="icon-arrow-right22"></i></a></p>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+										
+				</div>
+			</div>
+		</div>			
+	</div>
+
+	
+
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div id="contact">
+							<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h3>Contact Me !</h3>
+					<p>Incase of any queries or bugs found, you can easily contact me.</p>
+				</div>
+				
+				
+				
+				<div class="col-md-4 col-md-push-1 fh5co-widget">
+					<h3>Email:</h3>
+					<ul class="fh5co-footer-links">
+						<li>sauravu12@gmail.com </li>
+						<li>saurav124@live.com</li><br>
+					</ul>
+				
+				</div>
+
+				<div class="col-md-4 col-md-push-1 fh5co-widget">
+					<h3>Socials</h3>
+					<ul class="fh5co-footer-links">
+						<li><b>Twitter:</b><a href="https://twitter.com/saurava72007037" target="_blank">@Saurava72007037</a></li>
+						<li><b>Facebook:</b><a href="https://www.facebook.com/saurav.adhikari.10729" target="_blank">Saurav Adhikari</a></li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2020  All Rights Reserved.</small> 
+				</div>
+			</div>
+		</div>
+
+		</div>
+	</footer>
+	
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+	</div>
+
+	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.flexslider-min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+	<script>
+		function validatesearch(){
+		   var search = document.form2;
+
+		   if(search ==null|| search==""){
+			   alert("Please enter valid recipe/keyword !!");
+			   return false;
+		   
+		}
+		}
+	   $(window).scroll(function() {
+		   // 100 = The point you would like to fade the nav in.
+
+		   if ($(window).scrollTop() > 100) {
+
+			   $('.fixed').addClass('is-sticky');
+
+		   } else {
+
+			   $('.fixed').removeClass('is-sticky');
+
+		   };
+	   });
+   </script>
+
+	</body>
+</html>
+

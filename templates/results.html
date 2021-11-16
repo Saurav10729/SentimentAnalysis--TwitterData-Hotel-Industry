@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Results/Sentiment Analyzer</title>
+	<link rel="icon" href="{{url_for('static', filename='images/icontwitter.png')}}" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Saurav Adhikari" />
+
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css')}}	">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css')}}	">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}	">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css')}}	">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}	">
+
+
+	<script src="{{url_for('static',filename='js/modernizr-2.6.2.min.js') }}"></script>
+
+	</head>
+	<body>
+		<div class="fh5co-loader"></div>
+		<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-5">
+							<div id="fh5co-logo"><a href="index.html"><img src="{{ url_for('static', filename='images/twitterimage.png')}}	" height="100" width="100"><a href="index.html"><b><span>Sentiment</span>-Analyzer</b></a></div>
+						</div>
+						<div class="col-xs-7 text-right menu-1">
+							<br>
+							<ul>
+								<li><a href="index.html">Search</a></li>
+								<li><a href="index.html #toolused">Tools used</a></li>
+								<li><a href="index.html #contact">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</nav>
+		
+		<div id="fh5co-slider" style="background-color: #ffffff;" >
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 animate-box">
+						<div class="heading">
+							<h3>Hotel Searched for : {{search}} </h3>
+							{% if (rscore > 3 ): %}
+								<h3 style="color:green;">Score: {{rscore}} / 5 </h3>
+							{% elif (rscore <2 and rscore >3): %}
+								<h3 style="color: yellow;">Score: {{rscore}} / 5 </h3>
+							{% else: %}
+								<h3 style="color: red;">Score: {{rscore}} / 5 </h3>
+							{% endif %}
+							<p style="color: #111111;"> 
+							<b>Based on the Sentiment analysis done:<b><br> number of tweets downloaded and analyzed: {{tweet1}}</b> <br>
+							No of Positive tweets found : {{ psum }}<br>
+							No of Negative tweets found : {{ nsum }}
+						</b></p>
+						</div>
+					</div>
+					<div class="col-md-7 col-md-push-1 animate-box">
+						<aside id="fh5co-hero">
+						<div class="flexslider">
+							<ul class="slides">
+								<li style="background-image: url({{imagel}});  ">
+									<div class="overlay-gradient"></div>
+								   <div class="container-fluid">
+									   <div class="row">
+										<img src="{{imagef}}" >
+										   <div class="col-md-12 col-md-offset-0 col-md-pull-10 slider-text slider-text-bg" >
+											   <div class="slider-text-inner "  >
+												   <a href ={{url}} target ='_blank'>
+													   <div class="desc" style="color: #ffffff;background-color: #ff00ea; border-width: 3px;" >
+															<b>most popular hotel for the ' {{search}} ' keyword was</b>
+															<h2>{{hotelnamedesc}}</h2>
+															<p>{{desc}}</p>
+												   		</div>
+													</a>
+											   </div>
+										   </div>
+									   </div>
+								   </div>
+							   </li>
+							   <li style="background-image: url('/static/images/{{f1}}')">
+								<div class="overlay-gradient"></div>
+								   <div class="container-fluid">
+									   <div class="row">
+										   <div class="col-md-12 col-md-offset-0 col-md-pull-10 slider-text slider-text-bg">
+											   <div class="slider-text-inner">
+												<div class="desc" style="color: #ffffff;background-color:green;border-radius: 1px;">
+													<h2>Positive WordCloud</h2>
+														<p>the image shows the wordcloud of the most used words in positive reviews. It can be used to determine what are the aspects of the hotel the customer were pleased by.</p>
+												   </div>
+											   </div>
+										   </div>
+									   </div>
+								   </div>
+							   </li>
+							   <li style="background-image: url('/static/images/{{f2}}')">
+								<div class="overlay-gradient"></div>
+								   <div class="container-fluid">
+									   <div class="row">
+										   <div class="col-md-12 col-md-offset-0 col-md-pull-10 slider-text slider-text-bg">
+											   <div class="slider-text-inner">
+												<div class="desc" style="color: #ffffff;background-color:crimson;">
+														<h2>Negative WordCloud</h2>
+														<p>The Image shows the wordcloud of the most used words in <b>negative</b> reviews. It can be used to determine what are the aspects of the hotel the customer were dissatisfied by.</p>
+												   </div>
+											   </div>
+										   </div>
+									   </div>
+								   </div>
+							   </li>
+							   <li style="background-image: url('/static/images/{{barimg}}'); width: 100%;">
+								<div class="overlay-gradient"></div>
+								   <div class="container-fluid">
+									   <div class="row">
+										   <div class="col-md-12 col-md-offset-0 col-md-pull-10 slider-text slider-text-bg">
+											   <div class="slider-text-inner">
+												<div class="desc" style="color: #ffffff;background-color:#1da1f2;">
+														<h2>BarGraph</h2>
+														<p>The Image shows the bargraph which plots the number of positive tweets and negative tweets in relation to the total no. of tweets.</p>
+												   </div>
+											   </div>
+										   </div>
+									   </div>
+								   </div>
+							   </li>		   		   	
+							  </ul>
+						  </div>
+					</aside>
+					</div>
+				</div>
+				
+			</div>
+			<div class="container-fluid">
+				<br>
+				<br>
+				<br>
+				<div class="row" >
+					<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);transition: 0.3s;">
+						<div class="container" style="padding: 2px 16px; text-align: center;">
+						  <h2><b>Tweets with Positive Sentiments</b></h2>
+						  {% for item in top5pos: %}
+						  " <i>{{ item}}</i> "
+						  <br>
+						  <br>
+						  {% endfor %}
+						  <br>	
+					  </div>
+					</div>
+					<br>
+					<br>
+					
+					<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);transition: 0.3s;">
+						<div class="container" style="padding: 2px 16px; text-align: center;">
+						  <h2><b>Tweets with Negative Sentiments</b></h2>
+						  {% for item in top5neg: %}
+						  " <i>{{ item}}</i> "
+						  <br>
+						  <br>
+						  {% endfor %}
+						  <br>	
+					  	</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+	</div>
+	
+
+	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.flexslider-min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+	</body>
+</html>
+
